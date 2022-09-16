@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <div id="container">
+
+      <form>
+
+
+        <div>
+          <label>Title</label>
+          <input type="text" id="todo-title" />
+        </div>
+
+
+        <div>
+          <label>Completed</label>
+          <input type="checkbox" id="todo-completed" />
+        </div>
+
+        <button type="submit" id="submit-todo"> 🈯</button>
+
+      </form>
+
+    </div>
+  </body>
+</html>
+
+<script>
+
+
+
+
+
+let buttonTitle = document.getElementById('todo-title');
+let checkBox = document.getElementById('todo-completed');
+let buttonSubmit = document.getElementById('submit-todo');
+
+
+
+async function wiiiiii () {
+
+  let link = await fetch('https://jsonplaceholder.typicode.com/posts',
+    {
+      method : 'POST',
+      headers: { 'Content-Type': 'application/json; charset=utf-8' },
+      body: JSON.stringify({
+                            titolo: buttonTitle.value,
+                            chec_kbox: checkBox.checked
+                            })
+    })
+
+    let response = await link.json();
+    console.log(response);
+
+}
+
+
+
+
+buttonSubmit.addEventListener('click', () => {
+    event.preventDefault();
+    wiiiiii();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

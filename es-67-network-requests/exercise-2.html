@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+  <body>
+    <div id="container" style="display: flex; align-items: center; flex-direction: column; "></div>
+  </body>
+</html>
+
+<script>
+
+
+
+async function girminidello() {
+
+
+
+let vrbl = await fetch('https://jsonplaceholder.typicode.com/todos/4');
+
+
+let rispondimi = await vrbl.json();
+console.log(rispondimi);
+
+let {completed, id , title, userId} = rispondimi;
+
+let div = document.getElementById('container');
+
+let aaa = document.createElement('h3');
+  aaa.textContent =  `🥬 e il porro in tempura 🍤`;
+  
+  div.appendChild(aaa);
+
+
+
+let h2 = document.createElement('h2');
+
+h2.textContent = title;
+
+div.prepend(h2);
+
+let input = document.createElement('input');
+
+input.setAttribute('type', 'checkbox');
+
+div.appendChild(input);
+
+
+if(completed) {
+  input.checked = true
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+girminidello();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

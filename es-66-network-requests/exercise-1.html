@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <div id="container">
+      <ul class="todo-list"></ul>
+    </div>
+  </body>
+</html>
+
+<script>
+
+
+
+
+
+async function giuanin() {
+
+  let cuscin = await fetch('https://jsonplaceholder.typicode.com/todos');
+
+
+    const response = await cuscin.json();
+    const tdl = document.querySelector('.todo-list');
+
+    console.log(response);
+
+
+    for( let todo of response ) {
+      
+      const { completed, id, title, userId } = todo; // >-- queste chiavi le trovo all interno dell oggetto che ho messo all interno della variabile RESPONSE - negli oggetti di solito sono bnene o male sempre queste le chiavi presenti...
+      const tdl_element = document.createElement('li');
+      tdl_element.textContent = title; // è la chieve
+
+      tdl.appendChild(tdl_element);
+
+
+
+    }
+
+
+
+
+}
+
+giuanin();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,66 +1,50 @@
+<!DOCTYPE html>
+
 <html>
   <body>
     <div id="container">
       <button type="button" id="fetch-post">Fetch Post</button>
       <button type="button" id="save-post">Save Post on LocalStorage</button>
     </div>
+
+
+
+
+
+    <script>
+
+
+
+      let fetchP = document.getElementById('fetch-post');
+      let saveP = document.getElementById('save-post');
+      let post; 
+    
+    
+      fetchP.addEventListener('click',  
+        async function peppe() {
+    
+          fetch('https://jsonplaceholder.typicode.com/posts/1')
+          .then((response) => response.json())
+          .then((data) => {
+            post = data;
+            console.log(post);
+          })
+        }
+      );
+    
+      saveP.addEventListener('click', 
+            async function savePost () {
+              localStorage.setItem('post', JSON.stringify(post));
+              console.log(localStorage.getItem('post'));
+    
+            }
+      );
+    
+    
+    
+    
+    </script>
+    
   </body>
 </html>
 
-<script>
-
-
-  let fp = document.getElementById('fetch-post');
-  let sp = document.getElementById('save-post');
-
-  fp.addEventListener('click', fetchF);
-  sp.addEventListener('click', saveF);
-
-  async function fetchF() {
-    let af = await fetch("http://jsonplaceholder.typicode.com/posts/1");
-
-    let af2 = await af.json();
-
-    return af2;
-
-  }
-
-
-  async function saveF() {
-
-  let saveA = JSON.stringify(await fetchF());
-
-  localStorage.setItem('savedPost', saveA);
-
-
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</script>
