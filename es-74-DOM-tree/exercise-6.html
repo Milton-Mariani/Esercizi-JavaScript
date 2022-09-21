@@ -1,0 +1,129 @@
+<html>
+  <body>
+    <div id="container">
+
+      <h2>Person's Form</h2>
+
+      <form id="person-form">
+        <button type="submit">Submit</button>
+      </form>
+
+    </div>
+  </body>
+</html>
+
+<script>
+  
+
+
+
+  let form = document.getElementById('person-form');
+  let button = document.querySelector('button');
+
+    
+  let inputFirstName = document.createElement('input');
+  let inputLastName = document.createElement('input');
+  let inputAge = document.createElement('input');
+
+
+  inputFirstName.setAttribute('type','text'); 
+  inputLastName.setAttribute('type','text');
+  inputAge .setAttribute('type','text');
+
+  inputFirstName.setAttribute('value','Giocccondo'); 
+  inputLastName.setAttribute('value','il Pralinaro');
+  inputAge .setAttribute('value','777');
+
+
+  window.onload = function initForm() {
+    
+      form.appendChild(inputFirstName);
+      form.appendChild(inputLastName);
+      form.appendChild(inputAge);
+
+  }
+
+  button.onclick = function submitPersonForm(event) {
+    
+    event.preventDefault();
+
+    const person = {
+      'first-name' : inputFirstName.value,
+      'last-name' : inputLastName.value,
+      'age' : inputAge.value
+    }
+
+    console.log(person);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
